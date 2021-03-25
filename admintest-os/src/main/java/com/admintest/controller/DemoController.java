@@ -1,20 +1,23 @@
-package com.admintest.module.demo.controller;
+package com.admintest.controller;
 
+import com.admintest.service.DemoService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-/**
- * @Author: Shuangyu.liu
- * @Date: 2020/4/3 15:27
- * @Version: 1.0
- */
+
 @Controller
 @RequestMapping("/demo")
 public class DemoController {
+
+    @Autowired
+    DemoService demoService;
+
     @RequestMapping("/test")
     @ResponseBody
     public String test() {
+
         String success = "SpringWeb配置正确";
         return success;
     }
